@@ -1,13 +1,9 @@
 .center {
     text-align: center;
 }
-.thin {
-    margin-top: 0;
-    margin-bottom: 0;
-}
 #Name{
     font-size: 40px;
 }
 body{
-    background-color: #dede;
+    background-color: #dedef3;
 }
