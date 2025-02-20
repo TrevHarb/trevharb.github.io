@@ -10,3 +10,19 @@ body{
 .thin{
     color: black;
 }
+thead{
+    background-color: rgb(80, 122, 122);
+}
+td, table{
+    border: 1px solid black;
+    padding: 5px;
+}
+#stitle, #etitle{
+    font-size: 18px;
+}
+#nhighlight, #nhighlight:visited{
+    outline: none;
+    border: none;
+    text-decoration: none;
+    color: inherit;
+}
