@@ -1,5 +1,6 @@
 .center {
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .right{
     text-align: right;
@@ -31,4 +32,17 @@ td, table{
     border: none;
     text-decoration: none;
     color: inherit;
+    
+}
+#Nhighlight, #Nhighlight:visited{
+    outline: none;
+    border: none;
+    text-decoration: none;
+    color: black;
+     font-size: 40px;
+}
+.maintbl{
+    display: flex;
+    padding: 5px;
+    margin: 10px;
 }
