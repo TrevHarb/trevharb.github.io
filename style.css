@@ -8,6 +8,35 @@
 .left{
     text-align: left;
 }
+.Main{
+    padding-left: 40%;
+    border: 1px solid black;
+}
+.container {
+  width: 610px;
+  text-align: left;
+  margin: 0px auto 80px auto;
+}
+.dark{
+    border: 1px solid black;
+    padding: 2px;
+}
+.inner-left,
+.inner-right {
+  width: 220px;
+  float: left;
+  margin-left: 77px;
+}
+h4 {
+  margin-bottom: 10px
+}
+ul {
+    padding-left:25px;
+}
+li {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
 #Name{
     font-size: 40px;
 }
