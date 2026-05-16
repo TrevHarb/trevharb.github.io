@@ -1,49 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <link rel="stylesheet" href="style.css">
         <title>TrevH - Things Done</title>
     </head>
     <header>
-                <div>
-            <a href="index.html"><p>Go Back</p></a>
+        <div class="header-inner">
+            <a href="index.html" class="back-link">← Back</a>
+            <h1 class="page-title">Projects & Experience</h1>
         </div>
-        <h1 class="center">Projects and Experience</h1>
-          <hr class="thin">
+        <hr class="header-rule">
     </header>
     <body>
-        <div class="container">
-  <div class="inner-left">
-    <h4>Projects</h4>
-    <ul>
-      <li>KSU IT Capstone Project
-        <ul>
-          <li>Hosted a Webpage using NodeJS that collected form information from users.</li>
-          <li>Created Javascript Backend that used form information to create a RESTful query from a SQL DB.</li>
-          <li>Sorted through form information and displayed relevant data for Staff to download.</li>
-        </ul>
-      </li>
-      <li>Packet Tracer
-        <ul>
-          <li>Created 4 Networks and connected them using OSPF on seperate subnets.</li>
-          <li>Manually configured Switchs and seperate VLANS for different departments.</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div class="inner-left">
-    <h4>Work Experience</h4>
-    <ul>
-      <li>Setup a Windows IIS Web server and configured a DNS A Record to route Internally on a network.</li>
-      <li>Configured Firewall rules and optimized SSL VPN services to increase security.</li>
-      <li>Assisted with Hardening Google Admin Security settings to protect against account takovers.</li>
-      <li>Trained seven co-workers to become proficient in Tier One/Two Helpdesk work.</li>
-      <li>Managed an office environment of around five employees. </li>
-    </ul>
-  </div>
-</body>
-  <footer style="padding-top: 95%; width: 100%;">
+
+        <div class="things-wrap">
+
+            <section class="things-section">
+                <h2 class="things-heading">Projects</h2>
+
+                <div class="thing-card">
+                    <h3 class="thing-title">KSU IT Capstone Project</h3>
+                    <ul class="thing-list">
+                        <li>Hosted a webpage using Node.js that collected form information from users.</li>
+                        <li>Created a JavaScript backend that used form data to build a RESTful query against a SQL database.</li>
+                        <li>Sorted through form responses and displayed relevant data for staff to download.</li>
+                    </ul>
+                </div>
+
+                <div class="thing-card">
+                    <h3 class="thing-title">Packet Tracer</h3>
+                    <ul class="thing-list">
+                        <li>Created 4 networks and connected them using OSPF on separate subnets.</li>
+                        <li>Manually configured switches and separate VLANs for different departments.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="things-section">
+                <h2 class="things-heading">Work Experience</h2>
+
+                <div class="thing-card">
+                    <ul class="thing-list">
+                        <li>Set up a Windows IIS web server and configured a DNS A record to route traffic internally on a network.</li>
+                        <li>Configured firewall rules and optimized SSL VPN services to increase security.</li>
+                        <li>Assisted with hardening Google Admin security settings to protect against account takeovers.</li>
+                        <li>Trained seven co-workers to become proficient in Tier One/Two helpdesk work.</li>
+                        <li>Managed an office environment of around five employees.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+    </body>
+    <footer>
         <hr class="thin">
-        <p class="right"><a href="https://www.crouton.net" target="_blank" style="color: black;text-decoration: none;">©</a> 2026 Hosted by Github</p>
-  </footer>
+        <p class="right"><a href="https://www.crouton.net" target="_blank" style="color: black; text-decoration: none;">©</a> 2026 Hosted by Github</p>
+    </footer>
 </html>
+
+<style>
+/* =============================================
+   THINGS DONE PAGE — ADDITIONAL STYLES
+   Add this block to your existing style.css,
+   below the styles already added for the
+   index and vinyls pages.
+   ============================================= */
+
+/* Outer wrapper: same max-width as the vinyl cards (900px),
+   centered with auto margins, matching the site's column layout. */
+.things-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* Each section (Projects / Work Experience) gets some breathing room beneath it */
+.things-section {
+  margin-bottom: 3rem;
+  animation: fadeIn 0.6s ease both; /* inherits fadeIn from style.css */
+}
+
+.things-section:nth-child(1) { animation-delay: 0.08s; }
+.things-section:nth-child(2) { animation-delay: 0.18s; }
+
+/* Section headings ("Projects", "Work Experience"):
+   Same treatment as the vinyls page artist label —
+   small, uppercase, monospaced, in the muted color. */
+.things-heading {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Each project / experience block is a card with a left border accent,
+   similar to the record cards on the vinyls page. */
+.thing-card {
+  padding: 1.4rem 1.4rem 1.4rem 1.6rem;
+  border-left: 3px solid var(--rule);
+  margin-bottom: 1.2rem;
+  transition: border-color 0.2s ease;
+}
+
+.thing-card:hover {
+  border-left-color: var(--accent); /* subtle red highlight on hover */
+}
+
+/* Project / card title: Playfair Display to match album titles on vinyls page */
+.thing-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 0.7rem;
+  line-height: 1.3;
+}
+
+/* Bullet list: DM Mono light, same as record reviews */
+.thing-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+/* Each bullet item gets a custom → marker matching the index page link arrows */
+.thing-list li {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.7;
+  padding-left: 1.3em;
+  position: relative;
+}
+
+.thing-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--rule);
+  font-size: 0.8rem;
+}
+
+/* Footer: override the old inline padding-top: 95% hack with proper top margin */
+footer {
+  max-width: 900px; /* widen to match this page's content column */
+}
+
+/* Responsive: tighten padding on small screens */
+@media (max-width: 600px) {
+  .things-wrap {
+    padding: 2rem 1rem 3rem;
+  }
+  .thing-card {
+    padding: 1.1rem 1rem 1.1rem 1.2rem;
+  }
+}
+</style>

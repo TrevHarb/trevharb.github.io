@@ -1,60 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Mono:wght@300;400&display=swap');
+
+/* --- Variables --- */
+:root {
+  --cream: #f5f0e8;
+  --ink: #1a1714;
+  --muted: #7a7068;
+  --accent: #c0392b;
+  --rule: #d4cfc8;
+}
+
+/* --- Base Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--cream);
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Mono', monospace;
+  font-weight: 300;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 1.5rem;
+  animation: fadeIn 0.6s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Header --- */
+header {
+  padding: 3rem 1.5rem 1.5rem;
+  animation: fadeIn 0.5s ease both;
+}
+
+header div {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 .center {
     display: flex;
     justify-content: center;
-}
-.right{
-    text-align: right;
-}
-.left{
-    text-align: left;
-}
-.Main{
-    text-align: center;
-    border: 1px solid black;
-}
-.container {
-  width: 610px;
-  text-align: left;
-  margin: 0px auto 80px auto;
-}
-.dark{
-    border: 1px solid black;
-    padding: 2px;
-}
-.inner-left,
-.inner-right {
-  width: 220px;
-  float: left;
-  margin-left: 77px;
-}
-h4 {
-  margin-bottom: 10px
-}
-ul {
-    padding-left:25px;
-}
-li {
-    padding-bottom: 5px;
-    padding-top: 5px;
-}
-#Name{
-    font-size: 50px;
-}
-body{
-    background-color: #dedef3;
-}
-.thin{
-    color: black;
-}
-thead{
-    background-color: rgb(80, 122, 122);
-}
-td, table{
-    border: 1px solid black;
-    padding: 5px;
-}
-#stitle, #etitle{
-    font-size: 18px;
 }
 #nhighlight, #nhighlight:visited{
     outline: none;
@@ -70,8 +68,274 @@ td, table{
     color: black;
      font-size: 40px;
 }
-.maintbl{
-    display: flex;
-    padding: 5px;
-    margin: 10px;
+#Name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-align: left;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
 }
+
+/* Override any existing .center on the name */
+#Name.center {
+  text-align: left;
+}
+
+header hr {
+  border: none;
+  border-top: 2px solid var(--ink);
+  margin: 0;
+}
+
+/* --- Main Content --- */
+.Main {
+  max-width: 640px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+  flex: 1;
+  animation: fadeIn 0.7s ease 0.1s both;
+}
+
+.Main h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.Main > p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Nav Links List --- */
+.Main ul {
+  padding: 0;
+}
+
+.Main ul li {
+  border-top: 1px solid var(--rule);
+  animation: fadeIn 0.5s ease both;
+}
+
+.Main ul li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.Main ul li:nth-child(1) { animation-delay: 0.15s; }
+.Main ul li:nth-child(2) { animation-delay: 0.22s; }
+.Main ul li:nth-child(3) { animation-delay: 0.29s; }
+.Main ul li:nth-child(4) { animation-delay: 0.36s; }
+
+.Main ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 0;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.Main ul li a::after {
+  content: '→';
+  color: var(--rule);
+  font-size: 1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.Main ul li a:hover {
+  color: var(--accent);
+  padding-left: 0.4rem;
+}
+
+.Main ul li a:hover::after {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* --- Footer --- */
+footer {
+  max-width: 640px;
+  margin: 4rem auto 0;
+  padding: 0 1.5rem 2rem;
+  width: 100%;
+  animation: fadeIn 0.7s ease 0.4s both;
+}
+
+footer hr.thin {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin-bottom: 1rem;
+}
+
+footer p.right {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-align: right;
+}
+
+footer p.right a {
+  color: var(--muted) !important;
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  header { padding: 2rem 1rem 1.2rem; }
+  .Main  { padding: 0 1rem; margin-top: 2rem; }
+  footer { padding: 0 1rem 1.5rem; }
+}
+/* --- Shared variables & base styles are inherited from the index page styles --- */
+
+/* --- Header layout for this page ---
+   A flex row putting the back-link on the left
+   and keeping everything centered within a max-width column. */
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 1.2rem;
+}
+
+/* Back link: small, monospaced, subtle — matches the → arrow link style on index */
+.back-link {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 1.2rem;
+  transition: color 0.2s ease;
+}
+.back-link:hover {
+  color: var(--accent); /* same red accent used on the index hover states */
+}
+
+/* Page title: Playfair Display to match the index page h1 */
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+/* Thicker rule under the header title, same weight as index page header rule */
+.header-rule {
+  border: none;
+  border-top: 2px solid var(--ink);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* --- Record Cards ---
+   Each .record is a horizontal flex row: image on one side, text on the other.
+   Replaces the old float: left / float: right inline styles. */
+.record {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  border-bottom: 1px solid var(--rule); /* thin separator line between records */
+  animation: fadeIn 0.6s ease both;     /* inherits fadeIn keyframe from index styles */
+}
+
+/* .record-flip reverses the row direction so the image sits on the right.
+   This recreates the alternating left/right layout from the original page,
+   but using CSS flexbox instead of inline floats. */
+.record-flip {
+  flex-direction: row-reverse;
+}
+
+/* Staggered fade-in delays so each card appears slightly after the last */
+.record:nth-child(1) { animation-delay: 0.05s; }
+.record:nth-child(2) { animation-delay: 0.12s; }
+.record:nth-child(3) { animation-delay: 0.19s; }
+.record:nth-child(4) { animation-delay: 0.26s; }
+.record:nth-child(5) { animation-delay: 0.33s; }
+.record:nth-child(6) { animation-delay: 0.40s; }
+
+/* Image wrapper: fixed width so all covers are the same size regardless of text length */
+.record-img-wrap {
+  flex-shrink: 0; /* prevents the image from squishing when text is long */
+  width: 160px;
+}
+
+.record-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;  /* crops the image to a square if it isn't already */
+  display: block;
+  /* subtle shadow to lift the cover off the cream background */
+  box-shadow: 4px 6px 20px rgba(0,0,0,0.12);
+}
+
+/* --- Record text content --- */
+.record-info {
+  flex: 1; /* takes up the remaining horizontal space beside the image */
+}
+
+/* Album title: Playfair Display, matching the index page heading style */
+.record-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+/* Artist name: small, uppercase, muted — acts as a label/tag beneath the title */
+.record-artist {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent); /* red accent to make the artist name pop */
+  margin-bottom: 0.9rem;
+}
+
+/* Review body text: DM Mono light weight, same as the index body copy */
+.record-review {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* --- Responsive: stack image above text on small screens ---
+   Below 600px the horizontal side-by-side layout collapses to vertical,
+   and .record-flip stops reversing (so image is always on top). */
+@media (max-width: 600px) {
+  .record,
+  .record-flip {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .record-img-wrap {
+    width: 100%;
+  }
+  .record-img {
+    width: 140px;
+    height: 140px;
+  }
